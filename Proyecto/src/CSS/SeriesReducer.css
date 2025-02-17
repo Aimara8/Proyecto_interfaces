@@ -1,0 +1,140 @@
+.fondo{
+    margin: 0;
+    padding: 0;
+    min-height: 91.4vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fondo.dark{
+    background-color: #333;
+}
+
+.series_reducer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 750px;
+    margin: 20px auto;
+}
+
+.series_reducer.dark{
+    background-color: #1e1e1e; /* Fondo del contenedor en modo oscuro */
+    color: #ffffff; /* Texto blanco en modo oscuro */
+}
+
+.series_reducer h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.series_reducer.series_reducer.dark h1{
+    color: white;
+}
+
+.ingreso {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.series_reducer input {
+    padding: 10px;
+    border: none;
+    border-radius: 9999px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    background: none;
+    color: #666;
+}
+
+.series_reducer.dark input {
+    box-shadow: inset 2px 5px 10px rgba(255, 255, 255, 0.1); /* Sombra interna sutil */
+    background-color: #333; /* Fondo del input en modo oscuro */
+    color: #ffffff; /* Texto blanco en el input */
+}
+
+.series_reducer button {
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.series_reducer button:hover {
+    background-color: rgb(215, 68, 117);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #dadada;
+}
+
+th {
+    background-color: #dadada;
+    color: #333;
+}
+
+.series_reducer.dark th {
+    background-color: #333; /* Fondo de la cabecera de la tabla en modo oscuro */
+    color: #ffffff; /* Texto de la cabecera en modo oscuro */
+}
+
+td {
+    background-color: #ffffff;
+    color: black;
+}
+
+.series_reducer.dark td {
+    background-color: #1e1e1e; /* Fondo de las celdas en modo oscuro */
+    color: #ffffff; /* Texto de las celdas en modo oscuro */
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.series_reducer .btn-agregar{
+    width: 200px;
+}
+
+.series_reducer .btn-outline-primary {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.series_reducer .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.series_reducer .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.series_reducer .btn-danger:hover {
+    background-color: #c82333;
+}

@@ -1,0 +1,74 @@
+
+body {
+    background-color: #babcbe;
+    font-family: "Roboto Slab", serif;
+}
+
+.catsapp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 91.4vh;
+}
+
+.gato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.catsapp.dark .gato p{
+    color: #999;
+}
+
+.catsapp.dark{
+    background-color: #333;
+}
+
+.catsapp h1 {
+    color: black;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.catsapp.dark h1{
+    color: white;
+}
+
+.catsapp.light h2{
+    color: #333;
+}
+  
+.catsapp form {
+    margin-bottom: 20px;
+}
+  
+.catsapp button {
+    background-color: palevioletred;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+.catsapp button:hover {
+    background-color: rgb(215, 68, 117);
+}
+  
+p {
+    color: #666;
+    font-size: 14px;
+}

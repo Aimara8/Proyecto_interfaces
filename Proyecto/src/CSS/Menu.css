@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+
+.Heading {
+    position: relative; /* Importante: Contenedor relativo */
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #333;
+    padding: 0.1em 2em;
+
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto Slab", serif;
+    z-index: 10; /* Para que esté por encima del Login */
+}
+
+/* Tema claro */
+.Heading.light {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+/* Tema oscuro */
+.Heading.dark {
+    background-color: #000000;
+    color: white;
+}
+
+.Heading-h1 {
+    font-size: 2em;
+}
+
+.Heading.dark .Heading-h1 a {
+    color: palevioletred;
+}
+
+.Heading.light .Heading-h1 a {
+    color: palevioletred;
+}
+
+.nav-link, .Heading-a{
+    text-decoration-line: none;
+    position: relative;
+    color: inherit;
+    overflow: hidden;
+}
+
+.Heading .search{
+    border-radius: 100px;
+}
+
+.Heading.Heading.light .search{
+    background-color: rgba(122, 122, 122, 0.3);
+}
+
+.Heading.Heading.light .search:hover{
+    background-color: rgba(88, 88, 88, 0.3);
+}
+
+.Heading-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4em 0.8em;
+    cursor: pointer;
+    font-size: 1em;
+    color: inherit;
+}
+
+.Heading-nav {
+    display: block; /* Visible en pantallas grandes */
+}
+
+.Heading-nav .nav-link::after {
+    content: '';
+    /* Necesario para mostrar el pseudo-elemento */
+    position: absolute;
+    /* Posicionamiento absoluto */
+    left: 0;
+    /* Comienza desde la izquierda */
+    bottom: 0;
+    /* Se coloca en la parte inferior del texto */
+    width: 100%;
+    /* Ancho del subrayado */
+    height: 2px;
+    /* Altura del subrayado */
+    background-color: palevioletred;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    /* Transición suave */
+    opacity: 0;
+    /*Para que no se vea la línea*/
+}
+
+.Heading-nav .nav-link:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+    /*Ahora sí se muestra*/
+}
+
+.Heading-ul {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 1em;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Heading-toggle {
+    display: none;
+    /* Oculto en pantallas grandes */
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: inherit;
+    cursor: pointer;
+}
+
+.user-info {
+    display: block;
+    position: absolute; /* Posicionamiento absoluto */
+    top: 100%; /* Coloca el menú debajo del botón */
+    right: 0; /* Alinea a la derecha */
+    background-color: rgb(0 0 0 / 30%); /* Fondo semitransparente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    z-index: 10; /* Por encima del resto */
+}
+
+.Heading.dark .user-info{
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+}
+
+.user-info p{
+    color: black;
+}
+
+.Heading.dark .user-info p{
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 1060px) {
+    .Heading-nav {
+        display: none;
+        /* Oculta el menú en pantallas pequeñas */
+        position: absolute;
+        top: 100%;
+        /* Coloca el menú debajo del encabezado */
+        right: 0;
+        width: fit-content;
+        background-color: rgb(0 0 0 /20%);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 0.5em 2em;
+        z-index: 10; /* Por encima del resto */
+    }
+
+    .Heading-ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Heading-toggle {
+        display: block;
+    }
+
+    /* Menú visible al hacer clic */
+    .Heading-nav.visible {
+        display: block;
+    }
+}
+
+@media (max-width: 925px) {
+    .search-container{
+        display: none;
+    }
+}

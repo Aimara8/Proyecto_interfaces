@@ -1,0 +1,64 @@
+.home {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 91.4vh;
+    /*URL de imagen de fondo*/
+    background-image: url('../Images/snorlax.jpg');
+    background-repeat: no-repeat; /*Para que no se repita la imagen hasta llenar el fondo*/
+    background-position: center center; /*Centrar la imagen*/
+    background-size: cover;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Negro con 50% de opacidad */
+    z-index: 1; /* Asegúramos de que esté por encima de la imagen */
+}
+
+.home.dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Negro con 70% de opacidad */
+    z-index: 1; /* Asegúramos de que esté por encima de la imagen */
+}
+
+.home h1, p{
+    z-index: 10; /*Para que se ponga por encima del fondo*/
+}
+
+
+.home.light h1 {
+    color: black;
+}
+
+.home p {
+    padding: 0 25px;
+    color: #333;
+}
+
+.home.dark p{
+    color: #999;
+}
+
+.home .nav-link{
+    z-index: 100;
+}
+
+.botones_espacio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

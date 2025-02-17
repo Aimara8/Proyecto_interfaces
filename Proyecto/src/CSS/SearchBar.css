@@ -1,0 +1,168 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo del campo de entrada */
+.search-input {
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input input {
+    border-radius: 100px;
+    background-color: #ffffff;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    height: 30px;
+    width: 220px;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 17px #c8c8c8,
+        -5px -5px 17px #ffffff;
+    transition: all .5s;
+}
+
+.search-input input:focus {
+    background: #e8e8e8;
+    box-shadow: inset 5px 5px 17px #c8c8c8,
+        inset -5px -5px 17px #ffffff;
+}
+
+.search-container.dark .search-input input{
+    box-shadow: 5px 5px 17px #666,
+        -5px -5px 17px #333;
+}
+
+.search-container.dark .search-input input:focus {
+    background: black;
+    box-shadow: inset 5px 5px 17px #666,
+        inset -5px -5px 17px #333;
+}
+
+
+/* Estilo del botón de búsqueda */
+.search-input button {
+    background-color: orangered;
+    /* Color del botón */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    margin-left: 10px;
+    /* Espacio entre el input y el botón */
+    transition: all 0.3s ease;
+    box-shadow: rgb(226, 53, 79) 0px 2px 0px 0px;
+}
+
+.search-input button:hover {
+    box-shadow: rgb(201, 46, 70) 0px 2px 0px 0px;
+    /* Color al pasar el ratón */
+}
+
+.search-input button:active {
+    background-color: rgb(208, 55, 0);
+    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}
+
+/* Estilo de cada hit */
+.search-container {
+    position: relative;
+}
+
+#popup {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.search-container.dark .hit-container {
+    background-color: black;
+}
+
+.search-container.dark .ais-Hits-item p {
+    color: #777;
+}
+
+.search-container.dark .ais-Hits-item h6 {
+    color: #999;
+}
+
+.results-popup .hit-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-container.dark input {
+    background-color: black;
+    color: white;
+}
+
+#popup ul {
+    list-style: none;
+}
+
+.ais-Hits-item {
+    border-bottom: solid #666 1px;
+}
+
+.ais-Hits-list {
+    margin: 0;
+    padding: 0;
+}
+
+.hit-image {
+    width: 70px;
+    height: 95px;
+    margin-right: 10px;
+}
+
+.hit-info h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.hit-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.hit-info h6 {
+    font-size: 14px;
+    color: gray;
+}
+
+
+@media (max-width: 988px){
+
+.ais-SearchBox-reset{
+    display: none;
+}
+
+.search-container.light .search-input input[type="search"]::-webkit-search-cancel-button{
+    background: red; /* Cambia el color del fondo */
+}
+
+}
+
+@media (min-width: 988px){
+
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+        display: none;
+    }
+}

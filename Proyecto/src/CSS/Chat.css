@@ -1,0 +1,31 @@
+
+.chatbot-container {
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    margin: 2em auto;
+}
+
+
+.cs-message--outgoing {
+    color: white !important;
+    border-radius: 15px !important;
+    padding: 8px 12px !important;
+}
+
+.cs-message--incoming {
+    color: white !important;
+    border-radius: 15px !important;
+    padding: 8px 12px !important;
+}
+
+.cs-message-input {
+    border-top: 1px solid #ccc !important;
+    padding: 10px !important;
+}
