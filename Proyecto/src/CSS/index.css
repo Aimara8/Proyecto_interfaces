@@ -1,56 +1,125 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+.container {
+  max-width: 900px;
+  margin: 2rem 1rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container.dark{
+  background: linear-gradient(145deg, #000000, #0f0f0f);
+}
 
-  height: auto;
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Espacio entre el input y los botones */
+  margin-bottom: 20px;
+}
+
+.input-field {
   width: 100%;
-}
-
-
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.container.dark .input-field {
+  border: 2px solid #2b2b2b;
+  color: #ffffff;
+}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
 
-  a:hover {
-    color: #747bff;
-  }
+.button-group {
+  display: flex;
+  gap: 10px;
+  /* Espacio entre los botones */
+}
 
-  button {
-    background-color: #f9f9f9;
-  }
+.submit-button,
+.mic-button {
+  width: 55px;
+  /* Tamaño fijo para que sea circular */
+  height: 55px;
+  /* Tamaño fijo para que sea circular */
+  border: none;
+  border-radius: 50%;
+  /* Hace que el botón sea circular */
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-button {
+  background-color: rgb(1, 212, 212);
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  /* Efecto de escala al hacer hover */
+}
+
+.mic-button:hover {
+  transform: scale(1.05);
+  /* Efecto de escala al hacer hover */
+}
+
+.submit-button:active,
+.mic-button:active {
+  transform: scale(1);
+}
+
+.mic-button.active {
+  background-color: #ff4d4d;
+  /* Cambia el color cuando el micrófono está activo */
+}
+
+.display-area {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.container.dark .display-area {
+  background-color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.display-area h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.container.dark .display-area h3 {
+  color: white;
+}
+
+.container.dark .display-area p {
+  color: rgb(233, 233, 233);
+}
+
+.display-area p {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0 0;
 }
