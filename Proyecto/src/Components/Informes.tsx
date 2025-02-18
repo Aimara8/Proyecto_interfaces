@@ -32,6 +32,7 @@ interface Champion {
     difficulty: number;
     herotype: string;
     damage: number;
+    resource: string;
 }
 
 const Informes: React.FC = () => {
@@ -59,6 +60,7 @@ const Informes: React.FC = () => {
                 difficulty: parseFloat(champ.difficulty),
                 herotype: champ.herotype,
                 damage: parseFloat(champ.damage),
+                resource: champ.resource,
             }));
 
             setChampions(parsedData);
@@ -194,36 +196,71 @@ const Informes: React.FC = () => {
     };
 
     const getChartData = () => {
-        const rolesCount = champions.reduce((acc, champ) => {
-            acc[champ.herotype] = (acc[champ.herotype] || 0) + 1;
-            return acc;
-        }, {} as Record<string, number>);
+    const rolesCount = champions.reduce((acc, champ) => {
+        acc[champ.herotype] = (acc[champ.herotype] || 0) + 1;
+        return acc;
+    }, {} as Record<string, number>);
 
-        return {
-            labels: Object.keys(rolesCount),
-            datasets: [
-                {
-                    label: 'Cantidad de Campeones por Tipo',
-                    data: Object.values(rolesCount),
-                    backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(207, 86, 255, 0.6)', 'rgba(86, 255, 86, 0.6)', 'rgba(255, 134, 86, 0.6)', 'rgba(0, 0, 0, 0.6)'],
-                },
-            ],
-        };
+    // Ordenar los datos de mayor a menor
+    const sortedLabels = Object.keys(rolesCount).sort((a, b) => rolesCount[b] - rolesCount[a]);
+    const sortedData = sortedLabels.map(label => rolesCount[label]);
+
+    return {
+        labels: sortedLabels,
+        datasets: [
+            {
+                label: 'Cantidad de Campeones por Tipo',
+                data: sortedData,
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)', // Turquesa
+                    'rgba(255, 99, 132, 0.6)', // Rojo
+                    'rgba(255, 206, 86, 0.6)',  // Amarillo
+                    'rgba(207, 86, 255, 0.6)', // Morado
+                    'rgba(86, 255, 86, 0.6)',  // Verde
+                    'rgba(255, 134, 86, 0.6)', // Naranja
+                    'rgba(0, 0, 0, 0.6)',      // Negro
+                ],
+            },
+        ],
     };
+};
 
     const getPieChartData = () => {
-        const difficultyCount = champions.reduce((acc, champ) => {
-            acc[champ.difficulty] = (acc[champ.difficulty] || 0) + 1;
+        // Contar la cantidad de campeones por tipo de recurso
+        const resourceCount = champions.reduce((acc, champ) => {
+            acc[champ.resource] = (acc[champ.resource] || 0) + 1; // Usar champ.resource
             return acc;
-        }, {} as Record<number, number>);
+        }, {} as Record<string, number>); // Cambiar a Record<string, number> porque resource es un string
 
+        // Devolver los datos para el gráfico de torta
         return {
-            labels: Object.keys(difficultyCount).map(d => `Dificultad ${d}`),
+            labels: Object.keys(resourceCount).map(r => ` ${r}`), // Etiquetas para el gráfico
             datasets: [
                 {
-                    label: 'Cantidad de Campeones por Dificultad',
-                    data: Object.values(difficultyCount),
-                    backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(255, 134, 86, 0.6)'],
+                    label: 'Cantidad de Campeones', // Leyenda del gráfico
+                    data: Object.values(resourceCount), // Valores para cada sección del gráfico
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',   // Turquesa
+                        'rgba(255, 99, 132, 0.6)',   // Rojo
+                        'rgba(255, 206, 86, 0.6)',   // Amarillo
+                        'rgba(255, 134, 86, 0.6)',   // Naranja
+                        'rgba(153, 102, 255, 0.6)',  // Morado
+                        'rgba(54, 162, 235, 0.6)',   // Azul
+                        'rgba(255, 159, 64, 0.6)',   // Naranja claro
+                        'rgba(201, 203, 207, 0.6)',  // Gris
+                        'rgba(102, 204, 102, 0.6)',  // Verde claro
+                        'rgba(204, 102, 102, 0.6)',  // Rojo oscuro
+                        'rgba(102, 102, 204, 0.6)',  // Azul oscuro
+                        'rgba(204, 204, 102, 0.6)',  // Amarillo oscuro
+                        'rgba(102, 204, 204, 0.6)',  // Cian
+                        'rgba(204, 102, 204, 0.6)',  // Rosa
+                        'rgba(102, 204, 153, 0.6)',  // Verde menta
+                        'rgba(153, 102, 153, 0.6)',  // Morado oscuro
+                        'rgba(255, 102, 102, 0.6)',  // Rojo brillante
+                        'rgba(102, 255, 102, 0.6)',  // Verde brillante
+                        'rgba(102, 102, 255, 0.6)',  // Azul brillante
+                        'rgba(255, 255, 102, 0.6)',  // Amarillo brillante
+                    ],
                 },
             ],
         };
@@ -275,7 +312,7 @@ const Informes: React.FC = () => {
                 </div>
 
                 <div className="chart-container">
-                    <h2>Gráfica de Dificultad</h2>
+                    <h2>Gráfica de Recursos</h2>
                     <Pie data={getPieChartData()} />
                 </div>
             </div>
