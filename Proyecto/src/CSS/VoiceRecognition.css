@@ -1,12 +1,11 @@
 
 .container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  max-width: 900px;
+  margin: 2rem 1rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .container.dark{
@@ -16,7 +15,8 @@
 .input-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el input y los botones */
+  gap: 10px;
+  /* Espacio entre el input y los botones */
   margin-bottom: 20px;
 }
 
@@ -31,7 +31,7 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container.dark .input-field{
+.container.dark .input-field {
   border: 2px solid #2b2b2b;
   color: #ffffff;
 }
@@ -44,15 +44,19 @@
 
 .button-group {
   display: flex;
-  gap: 10px; /* Espacio entre los botones */
+  gap: 10px;
+  /* Espacio entre los botones */
 }
 
 .submit-button,
 .mic-button {
-  width: 55px; /* Tamaño fijo para que sea circular */
-  height: 55px; /* Tamaño fijo para que sea circular */
+  width: 55px;
+  /* Tamaño fijo para que sea circular */
+  height: 55px;
+  /* Tamaño fijo para que sea circular */
   border: none;
-  border-radius: 50%; /* Hace que el botón sea circular */
+  border-radius: 50%;
+  /* Hace que el botón sea circular */
   background-color: #007bff;
   color: white;
   cursor: pointer;
@@ -62,16 +66,18 @@
   justify-content: center;
 }
 
-.mic-button{
+.mic-button {
   background-color: rgb(1, 212, 212);
 }
 
-.submit-button:hover{
-  transform: scale(1.05); /* Efecto de escala al hacer hover */
+.submit-button:hover {
+  transform: scale(1.05);
+  /* Efecto de escala al hacer hover */
 }
 
 .mic-button:hover {
-  transform: scale(1.05); /* Efecto de escala al hacer hover */
+  transform: scale(1.05);
+  /* Efecto de escala al hacer hover */
 }
 
 .submit-button:active,
@@ -80,7 +86,8 @@
 }
 
 .mic-button.active {
-  background-color: #ff4d4d; /* Cambia el color cuando el micrófono está activo */
+  background-color: #ff4d4d;
+  /* Cambia el color cuando el micrófono está activo */
 }
 
 .display-area {
@@ -91,7 +98,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.container.dark .display-area{
+.container.dark .display-area {
   background-color: #000000;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
 }
@@ -103,10 +110,11 @@
   font-weight: 600;
 }
 
-.container.dark .display-area h3{
+.container.dark .display-area h3 {
   color: white;
 }
-.container.dark .display-area p{
+
+.container.dark .display-area p {
   color: rgb(233, 233, 233);
 }
 
